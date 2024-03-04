@@ -24,6 +24,7 @@
     width: 100%;
     padding: 1rem 2rem 0rem 1rem;
     animation: drop-down 0.9s;
+    overflow-y: hidden;
   }
   .hero-section .intro {
     display: flex;
