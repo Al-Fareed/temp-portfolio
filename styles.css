@@ -20,7 +20,7 @@
   }
   
   .hero-section {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     padding: 1rem 2rem 0rem 1rem;
     animation: drop-down 0.9s;
