@@ -144,9 +144,9 @@
       console.log("is Mac OS ", isMacOS())
       if (isMacOS()) {
         document.body.style.zoom = '125%';
-        const hero = document.getElementsByClassName("hero-section");
+        const hero = document.getElementsByClassName("hero-section")[0];
         hero.style.height = "80%"
-        const heading = document.getElementsByClassName("heading");
+        const heading = document.querySelector(".hero-section>.heading");
         heading.style.height = "100%"
       }
     }
