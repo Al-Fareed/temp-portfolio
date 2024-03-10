@@ -28,9 +28,12 @@
   }
   .hero-section .intro {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
   .hero-section .intro img {
+
+    align-items: center;
     height: 40px;
     border-radius: 50%;
     border: 2px solid black;
@@ -42,10 +45,28 @@
   }
   .hero-section .intro div {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
   }
-  .hero-section .intro div a {
+  a{
+    text-decoration: none;
+    color: black;
+    
+  }
+  #extra{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    padding: 0.5rem;
+    border-radius: 25px;
+    border: 2px solid black;
+    background-color: white;
+  }
+
+  .bind-links {
+    display: flex;
+    justify-content: space-around;
     text-decoration: none;
     padding: 0.5rem;
     border-radius: 25px;
@@ -53,13 +74,9 @@
     background-color: white;
     color: black;
   }
-  .hero-section .intro div a:hover {
-    text-decoration: none;
-    padding: 0.5rem;
-    border-radius: 25px;
-    border: 2px solid black;
-    background-color: black;
-    color: white;
+  .bind-links a {
+    margin: 0px 2px;
+    padding: 2px;
   }
   .hero-section .heading {
     text-align: center;
