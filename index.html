@@ -13,24 +13,45 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-    <script src="https://kit.fontawesome.com/84bdf781cb.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/84bdf781cb.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="body">
     <div class="hero-section">
       <div class="intro">
-        <div >
+        <div>
           <div id="me">
             <img src="assets/img/Al-Fareed.jpg" alt="Al-Fareed" />
           </div>
           <a id="extra" href="https://drive.google.com/file/d/1YMoYXDZigdVYZgRXdy65uU2i4dhkKAFP/view?usp=sharing"
             target="”_blank”">View CV &nbsp; <i class="fa-solid fa-file"></i></a>
+          <a class="like-button" style="width: 6rem;" id="extra" onclick="incrementCount()">
+            <div class="con-like">
+              <input class="like" type="checkbox" title="like">
+              <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" class="outline" viewBox="0 0 24 24">
+                  <path
+                    d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                  </path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="filled" viewBox="0 0 24 24">
+                  <path
+                    d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                  </path>
+                </svg>
+                <p id="likes"></p>
+              </div>
+            </div>
+          </a>
         </div>
+
         <div class="bind-links">
           <a href="mailto:alfareedss472@gmail.com" target="”_blank”"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://www.linkedin.com/in/al-fareed734781/" target="”_blank”"> <i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://www.instagram.com/alfareed.insta/" target="”_blank”"> <i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/al-fareed734781/" target="”_blank”"> <i
+              class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/alfareed.insta/" target="”_blank”"> <i
+              class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
       <div class="heading">
@@ -133,12 +154,59 @@
           <legend>Selenium</legend><img src="assets/img/skills/selenium.jpeg" alt="Selenium" />
       </div>
     </div>
+    <div class="footer">
+      
+      <div class="footer-header">
+        <h1>Thank You</h1>
+        <h2>Hope you like my profile</h2>
+        <h4 id="scrollToTop"><i class="fa-solid fa-bell"></i>Don't forget to like the page</h4>
+      </div>
+      <div class="mailme">
+        <a href="mailto:alfareedss472@gmail.com" target="”_blank”">Contact me via <i
+            class="fa-solid fa-envelope"></i></a>
+        &nbsp;
+        <a href="https://www.linkedin.com/in/al-fareed734781/" target="”_blank”"> <i
+            class="fa-brands fa-linkedin-in"></i></a>
+        &nbsp;
+        <a href="https://www.instagram.com/alfareed.insta/" target="”_blank”"> <i
+            class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
   </div>
+
+
 
   <script>
     function isMacOS() {
       let platform = navigator.platform;
       return platform.includes("Mac");
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollToTop = document.getElementById('scrollToTop');
+
+      scrollToTop.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth' 
+        });
+      });
+    });
+
+
+    let count = 534;
+    document.getElementById("likes").innerText = count;
+    let isClicked = false;
+    function incrementCount() {
+      isClicked = !isClicked;
+      if (isClicked) {
+        count++;
+        alert("Thank You for liking my portfolio!");
+      } else {
+        count--
+        alert("Sorry to see this, I am still trying to improve my portfolio, please tell me more about this in mail");
+      }
+      document.getElementById("likes").innerText = count;
+
     }
 
     function setZoomLevel() {
@@ -185,10 +253,12 @@
     }
 
     function setStyle(index) {
-      carousel[index].style.transition = 'all ease 0.5s';
-      carousel[index].style.transform = 'scale(2.5)';
+      carousel[index].style.transition = 'all ease 1s';
       carousel[index].style.border = '1px solid white';
       carousel[index].style.zIndex = '2';
+      carousel[index].style.transform = 'scale(2.5)';
+
+
     }
 
     function subImages(index, value) {
