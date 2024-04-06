@@ -39,10 +39,21 @@
     border: 2px solid black;
     transition: transform 0.5s ease-in-out;
   }
-  .hero-section .intro img:hover {
-    transform: scale(5) translate(280%, 70%);
-    border: 1px solid black;
+
+  @media only screen and (min-width: 320px) and (max-width: 768px)  {
+    .hero-section .intro img:hover {
+      transform: scale(5) translate(85%, 100%);
+      border: 1px solid black;
+    }
   }
+
+  @media only screen and (min-width: 1025px) {
+    .hero-section .intro img:hover {
+      transform: scale(5) translate(280%, 70%);
+      border: 1px solid black;
+    }
+  }
+
   .hero-section .intro div {
     display: flex;
     align-items: center;
@@ -175,7 +186,7 @@
   }
   
   .skills {
-    background-image: url("/assets/img/skills.png");
+    background-image: url("/assets/img/_6af6471b-fc7c-49f9-9fde-12c3c7dfe237.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -187,7 +198,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    background-color: rgba(20, 20, 20, 0.442);
+    background-color: rgba(7, 7, 7, 0.36);
     backdrop-filter: blur(5px);
     padding: 1rem 0rem;
   }
@@ -198,7 +209,7 @@
   .skills .skills-inner fieldset legend {
     border-radius: 50%;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(176, 175, 175);
   }
   .skills .skills-inner img {
     height: 6rem;
@@ -207,12 +218,12 @@
     object-fit: contain;
     border-radius: 50%;
     padding: 0.5rem;
-    border: 2px solid rgba(27, 27, 26, 0.981);
+    border: 2px solid rgba(144, 144, 143, 0.981);
     background-color: transparent;
     transition: all ease 0.2s;
   }
   .skills .skills-inner img:hover {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(204, 203, 203);
   }
   
   * {
