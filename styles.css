@@ -29,7 +29,7 @@ body {
 .hero-section .intro {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+justify-content: space-between;
 }
 .hero-section .intro img {
   align-items: center;
@@ -297,9 +297,7 @@ a {
   }
 }
 
-#likes {
-  padding-left: 2.5rem;
-}
+
 .footer {
   padding: 1rem;
 }
