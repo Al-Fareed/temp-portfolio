@@ -201,17 +201,17 @@
       });
     });
 
-
-    let isClicked = false;
     function incrementCount() {
+      setTimeout(delayIncrementing, 1000);
+    }
+    let isClicked = false;
+    function delayIncrementing(){
       isClicked = !isClicked;
       if (isClicked) {
-        alert("Thank You for liking my portfolio!");
+        alert("Thank You");
       } else {
-        alert("Sorry to see this, I am still trying to improve my portfolio, please tell me more about this in mail");
+        alert("Sorry to see this, you can share your feedbacks with me");
       }
-      document.getElementById("likes").innerText = count;
-
     }
 
     function setZoomLevel() {
