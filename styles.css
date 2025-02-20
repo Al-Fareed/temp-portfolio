@@ -306,9 +306,9 @@ a {
 }
 
 
-.footer {
+/* .footer {
   padding: 1rem;
-}
+} */
 
 .mailme {
   border: 2px solid #002e73;
@@ -330,7 +330,7 @@ h4 {
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
-.footer {
+/* .footer {
   margin-top: 1rem;
   position: relative;
   width: 100%;
@@ -341,7 +341,7 @@ h4 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
+} */
 
 .social-icon,
 .menu {
