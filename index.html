@@ -14,6 +14,14 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
   <script src="https://kit.fontawesome.com/84bdf781cb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 </head>
 
 <body>
@@ -46,23 +54,24 @@
       </div>
     </div>
 
-    <div class="sub-heading"  style="cursor: pointer;">
+    <div class="sub-heading" style="cursor: pointer;">
       <h2>UI DEVELOPMENT</h2>
     </div>
-    <div class="project-gallery" id="carousel">
-      <img src="assets/img/projects/Login.png" alt="Login Page" srcset="" />
-      <img src="assets/img/projects/Signup.png" alt="Sign Up Page" srcset="" />
-      <img src="assets/img/projects/Features.png" alt="Features Page" srcset="" />
-      <img src="assets/img/projects/Pricing.png" alt="Pricing Page" srcset="" />
-      <img src="assets/img/projects/Support.png" alt="Support Page" srcset="" />
-      <img src="assets/img/projects/soebms.png" alt="SOEBMS Page" srcset="" />
-      <img src="assets/img/projects/soebms 1.png" alt="SOEBMS Page" srcset="" />
+    <div class="carousel-container">
+      <div class="owl-carousel">
+        <div><img src="assets/img/projects/Login.png" alt="Login Page" /></div>
+        <div><img src="assets/img/projects/Signup.png" alt="Sign Up Page" /></div>
+        <div><img src="assets/img/projects/Features.png" alt="Features Page" /></div>
+        <div><img src="assets/img/projects/Pricing.png" alt="Pricing Page" /></div>
+        <div><img src="assets/img/projects/Support.png" alt="Support Page" /></div>
+        <div><img src="assets/img/projects/soebms 1.png" alt="SOEBMS Page" /></div>
+      </div>
     </div>
     <div class="sub-heading">
       <h2>worked with</h2>
     </div>
     <div class="skills">
-      <div class="skills-inner">       
+      <div class="skills-inner">
         <fieldset>
           <legend>Next JS</legend><img src="assets/img/skills/next.jpg" alt="CSS 3" />
         </fieldset>
@@ -71,10 +80,10 @@
         </fieldset>
         <fieldset>
           <legend>CSS3</legend><img src="assets/img/skills/CSS3.png" alt="CSS 3" />
-        </fieldset>        
+        </fieldset>
         <fieldset>
           <legend>Streamlit</legend><img src="assets/img/skills/streamlit.png" alt="CSS 3" />
-        </fieldset>        
+        </fieldset>
         <fieldset>
           <legend>ExpressJS</legend><img src="assets/img/skills/express-js.png" alt="ExpressJS" />
         </fieldset>
@@ -113,12 +122,6 @@
         </fieldset>
       </div>
     </div>
-    
-    <footer class="footer">
-      
-      <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> -->
-  <!-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
-  </footer>
   </div>
 
 
@@ -141,68 +144,20 @@
 
     window.onload = setZoomLevel;
 
-    const carousel = document.querySelectorAll('#carousel img');
-    const carouselLength = carousel.length;
-    let currentIndex = 0;
-
-    function displayCarousel() {
-      if (currentIndex <= carouselLength - 1) {
-        if (currentIndex === 3) currentIndex++;
-        if (currentIndex === carouselLength) currentIndex = 0;
-
-        const imageIndexToSwap = 3;
-
-        swapImages(imageIndexToSwap, currentIndex);
-        setStyle(imageIndexToSwap);
-        subImages(imageIndexToSwap + 1, 2);
-        subImages(imageIndexToSwap - 1, 2);
-        thirdImage(imageIndexToSwap - 2, 1.8);
-        thirdImage(imageIndexToSwap + 2, 1.8);
-      } else {
-        currentIndex = 0;
-      }
-      currentIndex++;
-
-      setTimeout(displayCarousel, 2500);
-    }
-
-    function swapImages(index1, index2) {
-      const temp = carousel[index1].src;
-      carousel[index1].src = carousel[index2].src;
-      carousel[index2].src = temp;
-    }
-
-    function setStyle(index) {
-      carousel[index].style.transition = 'all ease 1s';
-      carousel[index].style.border = '1px solid white';
-      carousel[index].style.zIndex = '2';
-      carousel[index].style.transform = 'scale(2.5)';
-
-
-    }
-
-    function subImages(index, value) {
-      carousel[index].style.transform = 'scale(' + value + ')';
-      carousel[index].style.zIndex = '1';
-    }
-    function thirdImage(index, value) {
-      carousel[index].style.transform = 'scale(' + value + ')';
-      carousel[index].style.zIndex = '0';
-    }
-
-    function hideImages(indices, displayValue) {
-      indices.forEach(index => {
-        carousel[index].style.display = displayValue;
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: -40,
+        autoplay: true,
+        autoplayTimeout: 1500,
+        center: true,   // <-- This makes center item "active"
+        responsive: {
+          0: { items: 1 },
+          600: { items: 3 },
+          1000: { items: 3 }  // More visible items on large screens
+        }
       });
-    }
-    function scaleDown(indices, displayValue) {
-      indices.forEach(index => {
-        carousel[index].style.transform = 'scale(' + displayValue + ')';
-        displayValue -= 0.2;
-      });
-    }
-    displayCarousel();
+    });
   </script>
 </body>
-
 </html>
